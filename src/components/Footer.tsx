@@ -6,9 +6,9 @@ export default function Footer() {
 
             <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-16 mb-24">
                 <div className="max-w-xl">
-                    <h2 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter uppercase text-white">Let's <span className="text-emerald-400 italic font-light">Connect</span></h2>
+                    <h2 className="text-5xl md:text-8xl font-black mb-6 tracking-tighter uppercase text-white">Let&apos;s <span className="text-emerald-400 italic font-light">Connect</span></h2>
                     <p className="text-xl text-neutral-400 font-light leading-relaxed">
-                        I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        I&apos;m currently looking for new opportunities. Whether you have a question or just want to say hi, I&apos;ll try my best to get back to you!
                     </p>
                     <a href="mailto:mjroshanackthar@gmail.com" className="inline-block mt-12 text-2xl md:text-4xl font-semibold border-b-2 border-emerald-400 pb-2 hover:text-emerald-400 transition-colors">
                         mjroshanackthar@gmail.com

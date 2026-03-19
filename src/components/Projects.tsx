@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import {
     SiC, SiSpringboot, SiApachemaven, SiHibernate,
     SiMysql, SiMongodb, SiJsonwebtokens, SiPostman
@@ -168,10 +169,11 @@ export default function Projects() {
                                 </div>
 
                                 <div className="relative z-10 w-full h-48 md:h-64 bg-neutral-900 rounded-[1.25rem] overflow-hidden mb-6">
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                                        fill
+                                        className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                                     />
                                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent mix-blend-multiply" />
                                 </div>

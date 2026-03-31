@@ -7,6 +7,15 @@ import {
 } from "react-icons/si";
 import { FaJava, FaNodeJs, FaReact, FaGitAlt, FaServer, FaCogs, FaVial } from "react-icons/fa";
 
+interface ProjectItem {
+    id: number;
+    title: string;
+    category: string;
+    description: string;
+    image: string;
+    link?: string;
+}
+
 export default function Projects() {
     const skills = [
         {
@@ -61,7 +70,7 @@ export default function Projects() {
         }
     ];
 
-    const projects = [
+    const projects: ProjectItem[] = [
         {
             id: 1,
             title: "Healora Scrollytelling Website",
@@ -190,9 +199,8 @@ export default function Projects() {
                                     <div>
                                         <div className="flex justify-between items-start">
                                             <p className="text-xs uppercase tracking-widest text-emerald-400 mb-4 font-semibold">{project.category}</p>
-                                            {/* @ts-ignore */}
                                             {project.link && (
-                                                <a href={(project as any).link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full backdrop-blur-md" title="Visit live website">
+                                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full backdrop-blur-md" title="Visit live website">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                                         <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                                                         <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>

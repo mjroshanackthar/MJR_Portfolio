@@ -64,27 +64,35 @@ export default function Projects() {
     const projects = [
         {
             id: 1,
+            title: "Healora Scrollytelling Website",
+            category: "Next.js 14 • Framer Motion • GSAP • Three.js",
+            description: "Developed a high-end, scrollytelling life coaching platform with a particle hero, glassmorphism design, and smooth scroll interactions.",
+            link: "http://healora-sharmila.vercel.app/",
+            image: "/projects/healora.png"
+        },
+        {
+            id: 2,
             title: "Blockchain Plagiarism Checker",
             category: "Node.js • MongoDB • Weaviate • Solidity",
             description: "Built backend for semantic similarity detection using Weaviate Vector Database. Integrated tamper-proof verification using blockchain hashes.",
             image: "/projects/plagiarism.png"
         },
         {
-            id: 2,
+            id: 3,
             title: "Inventory Management System",
             category: "Java • Spring Boot • React • MySQL • Docker",
             description: "Developed a full-stack CRUD application with Java Spring Boot backend. Optimized backend using database indexing and efficient pagination logic.",
             image: "/projects/inventory.png"
         },
         {
-            id: 3,
+            id: 4,
             title: "Public Infrastructure Management",
             category: "React.js • Solidity • Web3.js • MetaMask",
             description: "Built a transparent tender platform with secure backend and responsive frontend dashboard. Implemented wallet-based transactions.",
             image: "/projects/infrastructure.png"
         },
         {
-            id: 4,
+            id: 5,
             title: "GitHub Open Source Contributor",
             category: "Git • GitHub • Peer Review",
             description: "Contributed to open-source repositories by resolving issues and improving documentation. Familiar with feature branching and upstream workflows.",
@@ -178,9 +186,20 @@ export default function Projects() {
                                     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent mix-blend-multiply" />
                                 </div>
 
-                                <div className="relative z-10 px-4 md:px-6 pb-4 md:pb-6 flex flex-col justify-between">
+                                <div className="relative z-10 px-4 md:px-6 pb-4 md:pb-6 flex flex-col justify-between flex-grow">
                                     <div>
-                                        <p className="text-xs uppercase tracking-widest text-emerald-400 mb-4 font-semibold">{project.category}</p>
+                                        <div className="flex justify-between items-start">
+                                            <p className="text-xs uppercase tracking-widest text-emerald-400 mb-4 font-semibold">{project.category}</p>
+                                            {/* @ts-ignore */}
+                                            {project.link && (
+                                                <a href={(project as any).link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full backdrop-blur-md" title="Visit live website">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                                        <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                        <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                    </svg>
+                                                </a>
+                                            )}
+                                        </div>
                                         <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-tight drop-shadow-sm">{project.title}</h3>
                                     </div>
                                     <p className="text-neutral-300 font-light text-base mt-2 leading-relaxed">

@@ -2,10 +2,11 @@
 
 import Image from 'next/image';
 import {
-    SiC, SiSpringboot, SiApachemaven, SiHibernate,
-    SiMysql, SiMongodb, SiJsonwebtokens, SiPostman
+    SiTypescript, SiJavascript, SiSpringboot, SiApachemaven, SiHibernate,
+    SiExpress, SiMysql, SiMongodb, SiPostgresql, SiJsonwebtokens, SiPostman,
+    SiSolidity, SiWeb3Dotjs, SiDocker
 } from "react-icons/si";
-import { FaJava, FaNodeJs, FaReact, FaGitAlt, FaServer, FaCogs, FaVial } from "react-icons/fa";
+import { FaJava, FaNodeJs, FaReact, FaGitAlt, FaServer, FaCogs, FaGithub, FaEthereum, FaProjectDiagram } from "react-icons/fa";
 
 interface ProjectItem {
     id: number;
@@ -14,6 +15,7 @@ interface ProjectItem {
     description: string;
     image: string;
     link?: string;
+    github?: string;
 }
 
 export default function Projects() {
@@ -22,35 +24,48 @@ export default function Projects() {
             category: "Languages",
             items: [
                 { name: "Java", icon: <FaJava className="w-5 h-5 text-orange-500" /> },
-                { name: "C", icon: <SiC className="w-5 h-5 text-blue-500" /> }
+                { name: "TypeScript", icon: <SiTypescript className="w-5 h-5 text-blue-500" /> },
+                { name: "JavaScript", icon: <SiJavascript className="w-5 h-5 text-yellow-400" /> }
             ]
         },
         {
             category: "Frameworks",
             items: [
                 { name: "Spring Boot", icon: <SiSpringboot className="w-5 h-5 text-green-500" /> },
-                { name: "Maven", icon: <SiApachemaven className="w-5 h-5 text-red-500" /> },
-                { name: "Hibernate", icon: <SiHibernate className="w-5 h-5 text-amber-500" /> },
+                { name: "React.js", icon: <FaReact className="w-5 h-5 text-cyan-400" /> },
                 { name: "Node.js", icon: <FaNodeJs className="w-5 h-5 text-green-600" /> },
-                { name: "React.js", icon: <FaReact className="w-5 h-5 text-cyan-400" /> }
+                { name: "Express.js", icon: <SiExpress className="w-5 h-5 text-neutral-300" /> },
+                { name: "Maven", icon: <SiApachemaven className="w-5 h-5 text-red-500" /> },
+                { name: "Hibernate", icon: <SiHibernate className="w-5 h-5 text-amber-500" /> }
             ]
         },
         {
-            category: "Databases & Cloud",
+            category: "Databases",
             items: [
-                { name: "MySQL", icon: <SiMysql className="w-5 h-5 text-blue-400" /> },
+                { name: "PostgreSQL", icon: <SiPostgresql className="w-5 h-5 text-blue-400" /> },
+                { name: "MySQL", icon: <SiMysql className="w-5 h-5 text-blue-300" /> },
                 { name: "MongoDB", icon: <SiMongodb className="w-5 h-5 text-green-500" /> }
+            ]
+        },
+        {
+            category: "Blockchain",
+            items: [
+                { name: "Solidity", icon: <SiSolidity className="w-5 h-5 text-neutral-300" /> },
+                { name: "Web3.js", icon: <SiWeb3Dotjs className="w-5 h-5 text-orange-400" /> },
+                { name: "Smart Contracts", icon: <FaEthereum className="w-5 h-5 text-purple-400" /> },
+                { name: "MetaMask", icon: <FaEthereum className="w-5 h-5 text-orange-500" /> }
             ]
         },
         {
             category: "Tools & Practices",
             items: [
                 { name: "Git", icon: <FaGitAlt className="w-5 h-5 text-red-500" /> },
+                { name: "Docker", icon: <SiDocker className="w-5 h-5 text-blue-400" /> },
                 { name: "REST APIs", icon: <FaServer className="w-5 h-5 text-neutral-400" /> },
                 { name: "JWT", icon: <SiJsonwebtokens className="w-5 h-5 text-pink-500" /> },
                 { name: "CI/CD", icon: <FaCogs className="w-5 h-5 text-neutral-300" /> },
-                { name: "Unit Testing", icon: <FaVial className="w-5 h-5 text-yellow-500" /> },
-                { name: "Postman", icon: <SiPostman className="w-5 h-5 text-orange-500" /> }
+                { name: "Postman", icon: <SiPostman className="w-5 h-5 text-orange-500" /> },
+                { name: "Agile", icon: <FaProjectDiagram className="w-5 h-5 text-emerald-400" /> }
             ]
         }
     ];
@@ -73,6 +88,14 @@ export default function Projects() {
     const projects: ProjectItem[] = [
         {
             id: 1,
+            title: "Cyber-Shield",
+            category: "React.js • Solidity • NLP • Chrome Extension • AI",
+            description: "AI-powered cybercrime intelligence platform for Prakasam District Police Hackathon 2026. Enables citizens to report phishing links, fraudulent UPI IDs, and QR-code scams via a Chrome extension, with a centralized police dashboard for cross-case correlation and blockchain-backed evidence logging.",
+            github: "https://github.com/mjroshanackthar/Cyber-Shield",
+            image: "/projects/cybershield.png"
+        },
+        {
+            id: 2,
             title: "Healora Scrollytelling Website",
             category: "Next.js 14 • Framer Motion • GSAP • Three.js",
             description: "Developed a high-end, scrollytelling life coaching platform with a particle hero, glassmorphism design, and smooth scroll interactions.",
@@ -80,28 +103,55 @@ export default function Projects() {
             image: "/projects/healora.png"
         },
         {
-            id: 2,
-            title: "Blockchain Plagiarism Checker",
-            category: "Node.js • MongoDB • Weaviate • Solidity",
-            description: "Built backend for semantic similarity detection using Weaviate Vector Database. Integrated tamper-proof verification using blockchain hashes.",
-            image: "/projects/plagiarism.png"
-        },
-        {
             id: 3,
-            title: "Inventory Management System",
-            category: "Java • Spring Boot • React • MySQL • Docker",
-            description: "Developed a full-stack CRUD application with Java Spring Boot backend. Optimized backend using database indexing and efficient pagination logic.",
-            image: "/projects/inventory.png"
+            title: "StockZen — Inventory Management",
+            category: "React.js (TypeScript) • Spring Boot • PostgreSQL • OAuth",
+            description: "Full-stack inventory management system to track stock levels, manage sales, perform inventory adjustments, and visualize business analytics through a responsive dashboard with REST APIs and secure OAuth authentication.",
+            link: "https://stock-zen.netlify.app/login",
+            image: "/projects/stock-zen.png"
         },
         {
             id: 4,
-            title: "Public Infrastructure Management",
-            category: "React.js • Solidity • Web3.js • MetaMask",
-            description: "Built a transparent tender platform with secure backend and responsive frontend dashboard. Implemented wallet-based transactions.",
-            image: "/projects/infrastructure.png"
+            title: "Blockchain Plagiarism Checker",
+            category: "Node.js • MongoDB • Weaviate • Solidity",
+            description: "Node.js backend system for semantic similarity detection using Weaviate Vector Database. Integrated tamper-proof verification using blockchain hashes with hybrid storage — metadata in MongoDB and verification proofs on blockchain.",
+            github: "https://github.com/mjroshanackthar/blockchain-plagiarism-checker",
+            image: "/projects/plagiarism.png"
         },
         {
             id: 5,
+            title: "Public Infrastructure Management",
+            category: "React.js • Solidity • Web3.js • MetaMask",
+            description: "A transparent tender management platform built with React.js and Solidity smart contracts. Features wallet-based transactions via MetaMask and a responsive frontend dashboard emphasizing decentralized full-stack development.",
+            github: "https://github.com/mjroshanackthar/Public-Infrastructure-management",
+            image: "/projects/infrastructure.png"
+        },
+        {
+            id: 6,
+            title: "Mussel Farming Profit Calculator",
+            category: "React.js • TypeScript • Data Analytics",
+            description: "A React.js web app associated with an IEEE published research at ICMCSI 2025. Helps aquaculture farmers estimate mussel farming profitability by calculating investment costs, production output, revenue, and net profit instantly.",
+            link: "https://mussel-farming-netprofit-calculator.netlify.app/",
+            image: "/projects/mussel.png"
+        },
+        {
+            id: 7,
+            title: "AI Banking Form Assistant",
+            category: "React.js • Vite • AI",
+            description: "An AI-powered banking form assistant that streamlines form filling with intelligent auto-suggestions and smart validation for a seamless fintech user experience.",
+            link: "https://ai-banking-assistant.netlify.app/",
+            image: "/projects/aibanking.png"
+        },
+        {
+            id: 8,
+            title: "Retail Commerce — Buddies Trades",
+            category: "HTML • CSS • Bootstrap • JavaScript",
+            description: "A retail commerce platform showcasing product safety measures, categorized product listings across grocery, electronics, fashion, and agriculture with a responsive Bootstrap-based frontend.",
+            link: "https://retail-commerce.netlify.app/",
+            image: "/projects/retailcommerce.png"
+        },
+        {
+            id: 9,
             title: "GitHub Open Source Contributor",
             category: "Git • GitHub • Peer Review",
             description: "Contributed to open-source repositories by resolving issues and improving documentation. Familiar with feature branching and upstream workflows.",
@@ -120,7 +170,7 @@ export default function Projects() {
                     <h2 className="text-3xl md:text-5xl font-black mb-12 tracking-tighter">
                         Technical <span className="font-light italic text-neutral-400">Toolkit</span>
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {skills.map((group) => (
                             <div key={group.category} className="p-8 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl hover:bg-white/[0.05] transition-colors">
                                 <h3 className="text-xl font-bold mb-6 text-emerald-400">{group.category}</h3>
@@ -175,42 +225,49 @@ export default function Projects() {
                     <h2 className="text-3xl md:text-5xl font-black mb-12 tracking-tighter">
                         Selected <span className="font-light italic text-neutral-400">Works</span>
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                         {projects.map((project) => (
                             <div
                                 key={project.id}
-                                className="group relative p-3 md:p-4 rounded-3xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:bg-white/[0.05]"
+                                className="group relative p-2.5 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:bg-white/[0.05]"
                             >
                                 <div className="absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none">
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-tr from-transparent via-blue-500/10 to-purple-500/10 blur-2xl" />
                                 </div>
 
-                                <div className="relative z-10 w-full h-48 md:h-64 bg-neutral-900 rounded-[1.25rem] overflow-hidden mb-6">
+                                <div className="relative z-10 w-full h-36 md:h-40 bg-neutral-900 rounded-xl overflow-hidden mb-3">
                                     <Image
                                         src={project.image}
                                         alt={project.title}
                                         fill
                                         className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                                     />
-                                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent mix-blend-multiply" />
+                                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent mix-blend-multiply" />
                                 </div>
 
-                                <div className="relative z-10 px-4 md:px-6 pb-4 md:pb-6 flex flex-col justify-between flex-grow">
+                                <div className="relative z-10 px-3 pb-3 flex flex-col justify-between flex-grow">
                                     <div>
                                         <div className="flex justify-between items-start">
-                                            <p className="text-xs uppercase tracking-widest text-emerald-400 mb-4 font-semibold">{project.category}</p>
-                                            {project.link && (
-                                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-2 rounded-full backdrop-blur-md" title="Visit live website">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                                        <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                                                        <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                                                    </svg>
-                                                </a>
-                                            )}
+                                            <p className="text-[10px] uppercase tracking-widest text-emerald-400 mb-2 font-semibold leading-tight line-clamp-1">{project.category}</p>
+                                            <div className="flex items-center gap-1.5 shrink-0 ml-2">
+                                                {project.github && (
+                                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-1.5 rounded-full backdrop-blur-md" title="View on GitHub">
+                                                        <FaGithub className="w-3.5 h-3.5" />
+                                                    </a>
+                                                )}
+                                                {project.link && (
+                                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white hover:text-emerald-400 transition-colors bg-white/5 hover:bg-white/10 p-1.5 rounded-full backdrop-blur-md" title="Visit live website">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                                            <path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                                                            <path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                                                        </svg>
+                                                    </a>
+                                                )}
+                                            </div>
                                         </div>
-                                        <h3 className="text-xl md:text-2xl font-bold mb-3 tracking-tight drop-shadow-sm">{project.title}</h3>
+                                        <h3 className="text-base md:text-lg font-bold mb-1.5 tracking-tight drop-shadow-sm leading-snug">{project.title}</h3>
                                     </div>
-                                    <p className="text-neutral-300 font-light text-base mt-2 leading-relaxed">
+                                    <p className="text-neutral-400 font-light text-sm mt-1 leading-relaxed line-clamp-2">
                                         {project.description}
                                     </p>
                                 </div>

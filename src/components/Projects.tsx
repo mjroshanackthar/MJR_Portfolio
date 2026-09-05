@@ -155,8 +155,17 @@ export default function Projects() {
             title: "GitHub Open Source Contributor",
             category: "Git • GitHub • Peer Review",
             description: "Contributed to open-source repositories by resolving issues and improving documentation. Familiar with feature branching and upstream workflows.",
-            image: "/projects/opensource.png"
-        }
+            image: "/projects/opensource.png",
+        },
+        {
+            id: 10,
+            title: "Threadline — Alumni & Referral Network",
+            category: "React.js • Neo4j • GraphQL • TypeScript",
+            description: "Graph-backed web app that visualizes professional connections, finding shortest/strongest referral paths between individuals and companies using Cypher queries.",
+            link: "https://threadline-referral-graph.onrender.com/",
+            github: "https://github.com/mjroshanackthar/threadline-referral-graph",
+            image: "/projects/threadline.png"
+        },
     ];
 
     return (
